@@ -1,0 +1,188 @@
+[
+  {
+    "language": "en",
+    "translations": {
+      "title": "Settings",
+      "description": "Adjust your preferences here.",
+      "language": "Language",
+      "select_language": "Choose your preferred language",
+      "home": {
+        "title": "Home",
+        "routines": "Routines",
+        "analytics": "Analytics",
+        "choose_date": "Please choose a date:",
+        "added_activities": "Added Activities",
+        "canvas_time_emotions": "A Canvas of Time and Emotions",
+        "activity_reviews": "Activity Reviews",
+        "mood_charts": "Mood Charts",
+        "no_mood_data": "No mood data available for analytics."
+      },
+      "routines": {
+        "title": "Routines",
+        "description": "Create and manage your daily routines."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "View your time logs and emotions in charts."
+      },
+      "select_feeling": "Select Feeling",
+      "activity_name": "Enter activity name",
+      "add_activity": "Add"
+    }
+  },
+  {
+    "language": "es",
+    "translations": {
+      "title": "Configuración",
+      "description": "Ajusta tus preferencias aquí.",
+      "language": "Idioma",
+      "select_language": "Elige tu idioma preferido",
+      "home": {
+        "title": "Inicio",
+        "routines": "Rutinas",
+        "analytics": "Análisis",
+        "choose_date": "Por favor, elige una fecha:",
+        "added_activities": "Actividades añadidas",
+        "canvas_time_emotions": "Un lienzo de tiempo y emociones",
+        "activity_reviews": "Revisión de actividades",
+        "mood_charts": "Gráficos de estado de ánimo",
+        "no_mood_data": "No hay datos de estado de ánimo disponibles para el análisis."
+      },
+      "routines": {
+        "title": "Rutinas",
+        "description": "Crea y gestiona tus rutinas diarias."
+      },
+      "analytics": {
+        "title": "Análisis",
+        "description": "Mira tus registros de tiempo y emociones en gráficos."
+      },
+      "select_feeling": "Seleccionar sentimiento",
+      "activity_name": "Ingresa el nombre de la actividad",
+      "add_activity": "Añadir"
+    }
+  },
+  {
+    "language": "zh",
+    "translations": {
+      "title": "设置",
+      "description": "在这里调整你的偏好。",
+      "language": "语言",
+      "select_language": "选择你的首选语言",
+      "home": {
+        "title": "首页",
+        "routines": "日常",
+        "analytics": "分析",
+        "choose_date": "请选择日期：",
+        "added_activities": "已添加的活动",
+        "canvas_time_emotions": "时间与情感的画布",
+        "activity_reviews": "活动回顾",
+        "mood_charts": "心情图表",
+        "no_mood_data": "没有可用于分析的心情数据。"
+      },
+      "routines": {
+        "title": "日常",
+        "description": "创建并管理你的日常活动。"
+      },
+      "analytics": {
+        "title": "分析",
+        "description": "查看你的时间记录和情感图表。"
+      },
+      "select_feeling": "选择情感",
+      "activity_name": "输入活动名称",
+      "add_activity": "添加"
+    }
+  },
+  {
+    "language": "uk",
+    "translations": {
+      "title": "Налаштування",
+      "description": "Налаштуйте свої уподобання тут.",
+      "language": "Мова",
+      "select_language": "Виберіть бажану мову",
+      "home": {
+        "title": "Головна",
+        "routines": "Рутини",
+        "analytics": "Аналіз",
+        "choose_date": "Будь ласка, виберіть дату:",
+        "added_activities": "Додані активності",
+        "canvas_time_emotions": "Полотно часу та емоцій",
+        "activity_reviews": "Огляди активностей",
+        "mood_charts": "Графіки настрою",
+        "no_mood_data": "Дані настрою для аналізу відсутні."
+      },
+      "routines": {
+        "title": "Рутини",
+        "description": "Створюйте та керуйте своїми щоденними рутинами."
+      },
+      "analytics": {
+        "title": "Аналіз",
+        "description": "Перегляньте свої записи часу та емоції в графіках."
+      },
+      "select_feeling": "Вибір емоції",
+      "activity_name": "Введіть назву активності",
+      "add_activity": "Додати"
+    }
+  },
+  {
+    "language": "ga",
+    "translations": {
+      "title": "Socruithe",
+      "description": "Leag do roghanna anseo.",
+      "language": "Teanga",
+      "select_language": "Roghnaigh do theanga roghnaithe",
+      "home": {
+        "title": "Baile",
+        "routines": "Gnáthaimh",
+        "analytics": "Anailís",
+        "choose_date": "Roghnaigh dáta:",
+        "added_activities": "Gníomhaíochtaí a cuireadh leis",
+        "canvas_time_emotions": "Cánvas ama agus mothúchán",
+        "activity_reviews": "Athbhreithnithe Gníomhaíochtaí",
+        "mood_charts": "Cairtí Aoibhinn",
+        "no_mood_data": "Níl aon sonraí faoi aoibhinn le haghaidh anailíse."
+      },
+      "routines": {
+        "title": "Gnáthaimh",
+        "description": "Cruthaigh agus bainistigh do ghnáthaimh laethúla."
+      },
+      "analytics": {
+        "title": "Anailís",
+        "description": "Féach do thaifid ama agus mothúcháin i gcairtí."
+      },
+      "select_feeling": "Roghnaigh Mothúchán",
+      "activity_name": "Cuir ainm na gníomhaíochta isteach",
+      "add_activity": "Cuir"
+    }
+  },
+  {
+    "language": "fr",
+    "translations": {
+      "title": "Paramètres",
+      "description": "Ajustez vos préférences ici.",
+      "language": "Langue",
+      "select_language": "Choisissez votre langue préférée",
+      "home": {
+        "title": "Accueil",
+        "routines": "Routines",
+        "analytics": "Analyse",
+        "choose_date": "Veuillez choisir une date :",
+        "added_activities": "Activités ajoutées",
+        "canvas_time_emotions": "Un tableau de temps et d'émotions",
+        "activity_reviews": "Revue des activités",
+        "mood_charts": "Graphiques de l'humeur",
+        "no_mood_data": "Aucune donnée d'humeur disponible pour l'analyse."
+      },
+      "routines": {
+        "title": "Routines",
+        "description": "Créez et gérez vos routines quotidiennes."
+      },
+      "analytics": {
+        "title": "Analyse",
+        "description": "Affichez vos journaux de temps et d'émotions dans des graphiques."
+      },
+      "select_feeling": "Sélectionner une humeur",
+      "activity_name": "Entrez le nom de l'activité",
+      "add_activity": "Ajouter"
+    }
+  }
+]

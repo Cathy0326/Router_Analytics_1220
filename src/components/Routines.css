@@ -1,0 +1,207 @@
+/* general Body and card styles */
+body {
+  background-color: #faf5e6;
+  font-family: Arial, sans-serif;
+  color: #333; /* Dark gray for text to ensure readability */
+  margin: 0;
+  padding: 0;
+}
+
+/* styles of added activities card*/
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  width: 400px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%; /* Make inputs span the full width of the container */
+  margin-bottom: 15px;
+}
+
+.input-section input,
+.input-section select {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  width: 70%;
+  font-size: 0.9rem;
+  margin-right: 10px;
+  background-color: #f9f9f9; /* Soft background for inputs */
+}
+
+.input-section input:focus,
+.input-section select:focus {
+  border-color: #3b82f6; /* Blue border on focus */
+  outline: none;
+}
+
+.input-section button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* for the button of add activity */
+.input-section button:hover {
+  background-color: #2563eb;
+}
+
+/* List Styles */
+.list-section {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  width: 100%; /* Make the list span the full width of the container */
+}
+
+.list-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #3b82f6; /* Blue heading of Added Activities */
+  text-align: center;
+}
+
+.list-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list-section li {
+  padding: 10px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05); /* Light shadow */
+}
+
+.list-section li span {
+  font-size: 0.9rem;
+  color: #333; /* Dark text */
+}
+
+/* DatePicker Section */
+form .form-group {
+  margin-bottom: 15px;
+}
+
+.react-datepicker-wrapper input {
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+  width: 100%;
+}
+
+.react-datepicker-wrapper input:focus {
+  border-color: #3b82f6; /* Blue border on focus */
+  outline: none;
+  background-color: #ffffff;
+}
+
+/* style of the main time record button */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #cd0505; /* Red background */
+  border-radius: 12px;
+  width: 100px;
+  height: 100px;
+  color: #fff; /* White text */
+  transition: all 0.3s ease-in-out;
+  margin: 20px auto; /* Centers horizontally with margin-top */
+}
+
+/* style of the circular icon inside the button (middle part).*/
+.button-status-icon {
+  width: 30px;
+  height: 30px;
+  background-color: white; /* Circle background */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* style of play icon（in triangle shape ) */
+.button-play-icon {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #e42a2a; /* Red triangle */
+}
+
+/* styles of stop icon（in square shape ) */
+.button-inner-square {
+  width: 12px;
+  height: 12px;
+  background-color: #c90707; /* Dark red square */
+}
+
+/* styles of reset button  */
+.button-reset {
+  background-color: #fff; /* White button */
+  color: #cd0505; /* Red text */
+  border: none;
+  padding: 4px 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+/* navbar button */
+.navbar-button {
+  background-color: #3b82f6; /* Blue */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.navbar-button:hover {
+  background-color: #2563eb; /* Darker blue */
+}
+
+/* for select feeling dropdown */
+select {
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #f9f9f9; /* Light gray background for dropdown */
+  font-size: 0.9rem;
+}
+
+select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  background-color: #ffffff;
+}

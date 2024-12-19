@@ -1,0 +1,22 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: white;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
