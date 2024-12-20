@@ -11,7 +11,9 @@ nav a {
   color: white;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
 }
 
@@ -19,4 +21,116 @@ button {
   margin-top: 10px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+/* Analytics Page Styles */
+.analytics-header {
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-size: 36px;
+  color: #ff9900; /* Warm color */
+  margin-bottom: 20px;
+}
+
+.analytics-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.chart {
+  background-color: #f9f9f9; /* Light background for charts */
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.chart-header {
+  font-size: 20px;
+  color: #333;
+}
+
+/* Mood Page Styles */
+.mood-header {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  color: #ff66b2; /* Soft pink */
+  margin-bottom: 30px;
+}
+
+.mood-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.mood-dial {
+  border: 10px solid #ff66b2;
+  border-radius: 50%;
+  padding: 20px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mood-button {
+  padding: 15px 25px;
+  border-radius: 8px;
+  background-color: #ff66b2;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.mood-button:hover {
+  background-color: #ff3385; /* Slightly darker shade */
+}
+
+/* Activity Page Styles */
+.activity-header {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  color: #00b3e6; /* Bright blue */
+  margin-bottom: 20px;
+}
+
+.activity-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.activity-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  width: 200px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.activity-item:hover {
+  background-color: #e6f7ff; /* Light blue on hover */
+}
+
+.activity-button {
+  background-color: #00b3e6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.activity-button:hover {
+  background-color: #0097c0; /* Darker blue */
 }

@@ -1,99 +1,168 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import {
   PieChart,
   Pie,
   Cell,
   Tooltip,
   Legend,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
-import { ActivitiesContext } from "./Analytics";
-import { useActivity } from "../Routines"; // Import the useActivity hook
+import { useActivity } from "../Routines";
 
 const Mood = () => {
-  // Access activities via context
   const { activities } = useActivity();
-  const [selectedMood, setSelectedMood] = useState(""); // For mood filtering
-  // const activities = useContext(ActivitiesContext);
+  const [filterType, setFilterType] = useState("mood"); // 'mood' or 'activity'
+  const [selectedFilter, setSelectedFilter] = useState(""); // Selected mood or activity
+  const [timePeriod, setTimePeriod] = useState("all"); // All, this week, last month, etc.
 
-  // check if activities are available for analysis
-  if (!activities.length) {
-    return <div>No mood data available for analytics.</div>;
-  }
+  // Helper: Format dates consistently
+  const formatDate = (date) => {
+    if (typeof date === "string") return date;
+    return new Date(date).toISOString().split("T")[0];
+  };
 
-  // calculate different feelings
-  const moodCounts = activities.reduce((acc, activity) => {
-    // Increment the count for each mood type
+  // Format activity data with consistent dates
+  const formattedActivities = activities.map((activity) => ({
+    ...activity,
+    date: formatDate(activity.date),
+  }));
+
+  // Calculate mood counts
+  const moodCounts = formattedActivities.reduce((acc, activity) => {
     acc[activity.feeling] = (acc[activity.feeling] || 0) + 1;
     return acc;
   }, {});
 
-  // Filter moods based on selected mood
-  const filteredMoodCounts = selectedMood
-    ? { [selectedMood]: moodCounts[selectedMood] }
-    : moodCounts;
+  // Calculate activity counts for a selected mood
+  const activityCountsByMood = (selectedMood) =>
+    formattedActivities
+      .filter((activity) => activity.feeling === selectedMood)
+      .reduce((acc, activity) => {
+        acc[activity.name] = (acc[activity.name] || 0) + 1;
+        return acc;
+      }, {});
 
-  // convert moodCounts object into an array format suitable for the Pie chart
-  const moodData = Object.entries(moodCounts).map(([mood, count]) => ({
-    mood, // feeling type (e.g., happy, sad, etc.)
-    count, // count of how many times this feeling occurred
+  // Calculate mood counts for a selected activity
+  const moodCountsByActivity = (selectedActivity) =>
+    formattedActivities
+      .filter((activity) => activity.name === selectedActivity)
+      .reduce((acc, activity) => {
+        acc[activity.feeling] = (acc[activity.feeling] || 0) + 1;
+        return acc;
+      }, {});
+
+  // Get unique moods and activities
+  const uniqueMoods = Array.from(
+    new Set(formattedActivities.map((a) => a.feeling))
+  );
+  const uniqueActivities = Array.from(
+    new Set(formattedActivities.map((a) => a.name))
+  );
+
+  // Data for pie chart
+  const pieData = Object.entries(moodCounts).map(([mood, count]) => ({
+    name: mood,
+    value: count,
   }));
 
-  // define chart colors
+  // Data for bar chart based on selected filter
+  const barData =
+    filterType === "mood" && selectedFilter
+      ? Object.entries(activityCountsByMood(selectedFilter)).map(
+          ([name, count]) => ({
+            name,
+            count,
+          })
+        )
+      : filterType === "activity" && selectedFilter
+      ? Object.entries(moodCountsByActivity(selectedFilter)).map(
+          ([name, count]) => ({
+            name,
+            count,
+          })
+        )
+      : [];
+
+  // Chart colors
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   return (
     <div>
-      <h3>Mood Charts</h3>
+      <h3>Mood and Activity Analytics</h3>
 
-      {/* Filter Dropdown for Mood */}
-      <select
-        onChange={(e) => setSelectedMood(e.target.value)}
-        value={selectedMood}
-      >
-        <option value="">All Moods</option>
-        {Object.keys(moodCounts).map((mood) => (
-          <option key={mood} value={mood}>
-            {mood}
-          </option>
-        ))}
-      </select>
+      {/* Filter Controls */}
+      <div>
+        <label htmlFor="filter-type">View by:</label>
+        <select
+          id="filter-type"
+          value={filterType}
+          onChange={(e) => {
+            setFilterType(e.target.value);
+            setSelectedFilter(""); // Reset filter when changing type
+          }}
+        >
+          <option value="mood">Mood</option>
+          <option value="activity">Activity</option>
+        </select>
 
-      {/* Display the mood counts in a list */}
-      <ul>
-        {Object.entries(moodCounts).map(([mood, count]) => (
-          <li key={mood}>
-            {mood}: {count}
-          </li>
-        ))}
-      </ul>
+        <label htmlFor="filter-value">Select:</label>
+        <select
+          id="filter-value"
+          value={selectedFilter}
+          onChange={(e) => setSelectedFilter(e.target.value)}
+        >
+          <option value="">All</option>
+          {(filterType === "mood" ? uniqueMoods : uniqueActivities).map(
+            (item) => (
+              <option key={item} value={item}>
+                {item}
+              </option>
+            )
+          )}
+        </select>
+      </div>
 
-      {/* Pie chart visualization */}
+      {/* Pie Chart */}
       <ResponsiveContainer width="100%" height={300}>
         <PieChart>
-          {/* The Pie chart needs data, and we pass moodData here */}
           <Pie
-            data={moodData} // Pass mood data to Pie component
-            dataKey="count" // Specify the key representing the value for each slice
-            nameKey="mood" // Specify the key representing the label for each slice
-            outerRadius={100} // Radius of the pie chart
-            fill="#8884d8" // Default fill color
-            label // Optionally display labels inside the slices
+            data={pieData}
+            dataKey="value"
+            nameKey="name"
+            outerRadius={100}
+            label={({ name, percent }) =>
+              `${name}: ${(percent * 100).toFixed(1)}%`
+            }
           >
-            {/* Color each slice differently */}
-            {moodData.map((entry, index) => (
+            {pieData.map((entry, index) => (
               <Cell
                 key={`cell-${index}`}
                 fill={COLORS[index % COLORS.length]}
               />
             ))}
           </Pie>
-          {/* Tooltip to display details on hover */}
           <Tooltip />
-          {/* Legend to show the mood names */}
           <Legend />
         </PieChart>
       </ResponsiveContainer>
+
+      {/* Bar Chart */}
+      {selectedFilter && (
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={barData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="count" fill="#8884d8" />
+          </BarChart>
+        </ResponsiveContainer>
+      )}
     </div>
   );
 };

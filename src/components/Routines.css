@@ -101,6 +101,35 @@ body {
   color: #333; /* Dark text */
 }
 
+.sorting-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+.sorting-controls span {
+  margin-right: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.sorting-controls select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: #f9f9f9;
+  font-size: 0.9rem;
+  width: 190px;
+  transition: border 0.2s ease;
+}
+
+sorting-controls select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  background-color: #ffffff;
+}
+
 /* DatePicker Section */
 form .form-group {
   margin-bottom: 15px;

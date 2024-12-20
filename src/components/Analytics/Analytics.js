@@ -38,7 +38,7 @@ const Analytics = () => {
   return (
     <ActivitiesContext.Provider value={activities}>
       <div>
-        <h2> A Canvas of Time and Emotions </h2>
+        <h2> Canva of Time and Emotions </h2>
         {/* Add local navigation for child routes */}
         <nav>
           <Link to="activity" style={{ marginRight: "10px" }}>

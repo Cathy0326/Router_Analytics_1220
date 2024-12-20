@@ -4,6 +4,7 @@ import { createContext, useContext } from "react"; // Add this line
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
+
 import "./Routines.css";
 
 // create the ActivityContext
@@ -194,19 +195,24 @@ function Routines() {
         </button>
       </div>
 
-      {/* Sorting */}
-      <select onChange={handleSortChange} value={sortOrder}>
-        <option value=" ">Sorting </option>
-        <option value="asc">Sort by Duration (Asc)</option>
-        <option value="desc">Sort by Duration (Desc)</option>
-        <option value="name-asc">Sort by Name (A-Z)</option>
-        <option value="name-desc">Sort by Name (Z-A)</option>
-        <option value="date-asc">Sort by Date (Earliest)</option>
-        <option value="date-desc">Sort by Date (Latest)</option>
-      </select>
-
       <div className="list-section">
         <h3> Added Activities </h3>
+
+        {/* Sorting */}
+        <div className="sorting-controls">
+          <span>Sort by:</span>
+          <select onChange={handleSortChange} value={sortOrder}>
+            <option value=" ">Choose Sorting </option>
+            <option value="asc">Duration (Asc)</option>
+            <option value="desc">Duration (Desc)</option>
+            <option value="name-asc">Name (A-Z)</option>
+            <option value="name-desc">Name (Z-A)</option>
+            <option value="date-asc">Date (Earliest)</option>
+            <option value="date-desc">Date (Latest)</option>
+          </select>
+        </div>
+
+        {/* Activities List */}
         <ul>
           {list.map((item, idx) => (
             <li key={idx}>
